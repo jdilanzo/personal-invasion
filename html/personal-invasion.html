@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal Invasion</title>
+  <script src="../js/validation.js"></script>
+  <link href="../css/stylesheet.css" rel="stylesheet">
+</head>
+<!-- Body Starts Here -->
+<body id="body" style="overflow: hidden;">
+<h1> Personal Invasion </h1>
+<p> In the form on this page, please enter your name, your phone number
+  (including area code, if applicable), your date of birth, and your favourite
+  pastime. A name must contain at least one character. A phone number must
+  contain at least one digit. A date of birth must be a valid date (leap years
+  are covered). Choose your favourite pastime <i>only</i> from the list of: </p>
+<ul>
+  <li>Surfing the Web;</li>
+  <li>Playing Sport;</li>
+  <li>Listening to Music;</li>
+  <li>Watching TV;</li>
+  <li>Playing Games;</li>
+  <li>Community Service;</li>
+  <li>Daydreaming;</li>
+  <li>Reading; or</li>
+  <li>Meditation.</li>
+</ul>
+<p> When you have filled out all the fields, press the submit button to send the
+  information to the test CGI server.
+<div id="form">
+  <!-- Form Starts Here -->
+  <form action="http://www.it.murdoch.edu.au/cgi-bin/reply1.pl" id="form"
+        method="post"
+        name="form"
+        onSubmit="return isValidForm(this)">
+    <h2> Personal Invasion </h2>
+    <hr>
+    <input id="name" name="name" onChange="isValidName(this)" placeholder="Name"
+           required
+           type="text">
+    <div class="error" id="errorName"></div>
+    <input id="number" name="number" onChange="isValidPhoneNumber(this)"
+           placeholder="Phone Number"
+           required type="text">
+    <div class="error" id="errorNumber"></div>
+    <input id="day" max="31" min="1" name="day" onChange="isValidDay(this)"
+           placeholder="Day" required type="number">
+    <input id="month" max="12" min="1" name="month"
+           onChange="isValidMonth(this)"
+           placeholder="Month" required type="number">
+    <input id="year" min="0" name="year" onChange="isValidYear(this)"
+           placeholder="Year"
+           required type="number">
+    <div class="error" id="errorDate"></div>
+    <input id="pastime" name="pastime" onChange="isValidPastime(this)"
+           placeholder="Favourite Pastime"
+           required type="text">
+    <div class="error" id="errorPastime"></div>
+    <hr>
+    <input id="submit" type="submit">
+    <div class="error" id="errorForm"></div>
+  </form>
+  <!-- Form Ends Here -->
+</div>
+<div style="position: absolute; bottom: 5px; font-size: 12px; font-family: 'Raleway', sans-serif">
+  Icons made by <a href="https://www.freepik.com/" title="Freepik"> Freepik </a>
+  from <a href="https://www.flaticon.com/" title="Flaticon">
+  www.flaticon.com </a>. Licensed by <a
+        href="http://creativecommons.org/licenses/by/3.0/"
+        target="_blank" title="Creative Commons BY 3.0"> CC 3.0 BY </a>.
+  Stylesheet by Neeraj Agarwal (adapted).
+</div>
+</body>
+<!-- Body Ends Here -->
+</html>
